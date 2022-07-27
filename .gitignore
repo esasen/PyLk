@@ -1,9 +1,3 @@
-# ignore test directory
-**test/
-
-# ignore testdata directory
-**testdata/
-
 # ignore build directories
 **build/
 
@@ -18,6 +12,3 @@ PyLk.egg-info/
 
 # ignore all .c files
 **.c
-
-# ignore all test files
-**test.py
