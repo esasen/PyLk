@@ -3,29 +3,46 @@ import pylk
 import time
 import iopolymc
 
-implementation='python'
-implementation='numba'
-implementation='cython'
 
 # compile
 R = np.zeros([100,3])
 R[:,0] = 1
-wm = pylk.writhemap(R,implementation=implementation)
+wm = pylk.writhemap(R,implementation='numba')
 
-N = 2
-if implementation=='numba':
-    N = 100
-if implementation=='cython':
-    N = 100
 
 state = iopolymc.load_state('test.state')
 configs = state['pos']
 
+print('#####################')
+print('python implementation')
+N=2
 print(f'running {N} calculations')
 t1 = time.time()
 for i in range(N):
-    wm = pylk.writhemap(configs[-1],implementation=implementation)
+    wm = pylk.writhemap(configs[-1],implementation='python')
 t2 = time.time()
 print(f'Wr = {np.sum(wm)}')
-print('done')
+print(f'elapsed time: {(t2-t1)/N}')
+
+
+print('#####################')
+print('numba implementation')
+N=100
+print(f'running {N} calculations')
+t1 = time.time()
+for i in range(N):
+    wm = pylk.writhemap(configs[-1],implementation='numba')
+t2 = time.time()
+print(f'Wr = {np.sum(wm)}')
+print(f'elapsed time: {(t2-t1)/N}')
+
+print('#####################')
+print('cython implementation')
+N=100
+print(f'running {N} calculations')
+t1 = time.time()
+for i in range(N):
+    wm = pylk.writhemap(configs[-1],implementation='cython')
+t2 = time.time()
+print(f'Wr = {np.sum(wm)}')
 print(f'elapsed time: {(t2-t1)/N}')
