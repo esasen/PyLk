@@ -23,7 +23,7 @@ setup(name='PyLk',
       license='MIT',
       packages=['pylk'],
       install_requires=[
-          'numpy<=1.22',
+          'numpy',
           'numba',
           'cython',
           'scipy'

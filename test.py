@@ -9,7 +9,7 @@ R = np.zeros([100,3])
 R[:,0] = 1
 wm = pylk.writhemap(R,implementation='numba')
 
-statefn = 'test.state'
+statefn = 'test/test.state'
 
 state = iopolymc.load_state(statefn)
 configs = state['pos']
