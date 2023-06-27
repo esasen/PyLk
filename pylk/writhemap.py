@@ -21,10 +21,8 @@ def writhemap(config,method='klenin1a',implementation=DEFAULT_METHOD):
     
     if method == 'klenin1a':
         if implementation   == 'cython':
-            print('cython')
             return np.asarray(wmc_writhemap_klenin1a(config))
         elif implementation == 'numba':
-            print('numba')
             return wmn_writhemap_klenin1a(config)
         elif implementation == 'python':
             return wmp_writhemap_klenin1a(config)
