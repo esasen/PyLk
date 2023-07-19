@@ -1,4 +1,5 @@
 import numpy as np
+import warnings
 from ._writhemap_numba  import wmn_writhemap_klenin1a
 from ._writhemap_python import wmp_writhemap_klenin1a
 try:
@@ -8,6 +9,7 @@ try:
 except ModuleNotFoundError:
     WM_CYTHON_INCLUDED = False
     WM_DEFAULT_METHOD = 'numba'
+    warnings.warn('Cython version of writhemap (PyLk) not compiled. Defaulting to numba implementation. Consider compiling the cython version.')
     
 WM_METHODS = ['klenin1a']
 
@@ -18,7 +20,7 @@ def writhemap(config,method='klenin1a',implementation=WM_DEFAULT_METHOD):
     
     if implementation == 'cython' and not WM_CYTHON_INCLUDED:
         raise ModuleNotFoundError("No module named 'pylk._writhemap_cython'")
-    
+        
     if method == 'klenin1a':
         if implementation   == 'cython':
             return np.asarray(wmc_writhemap_klenin1a(config))
@@ -28,3 +30,4 @@ def writhemap(config,method='klenin1a',implementation=WM_DEFAULT_METHOD):
             return wmp_writhemap_klenin1a(config)
         else:
             raise ValueError(f"Invalid implementation '{implementation}' for method '{method}'")
+
