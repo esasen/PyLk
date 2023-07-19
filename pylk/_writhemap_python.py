@@ -5,7 +5,7 @@ import math
 def wmp_writhemap_klenin1a(pos):
     N = len(pos)
     WM = np.zeros([N,N])
-    fac4pi = 1./(4*np.pi);
+    fac4pi = 1./(4*np.pi)
     
     """
         Calculate Gauss integral segment contributions except those involving the last segment
@@ -75,7 +75,7 @@ def wmp_writhemap_klenin1a(pos):
         if (vecnorm > 1e-10):
             n1 = n1/vecnorm
 
-        n2      = np.cross(r14,r24);
+        n2      = np.cross(r14,r24)
         vecnorm = np.linalg.norm(n2)
         if (vecnorm > 1e-10):
             n2 = n2/vecnorm
@@ -83,7 +83,7 @@ def wmp_writhemap_klenin1a(pos):
         n3      = np.cross(r24,r23)
         vecnorm = np.linalg.norm(n3)
         if (vecnorm > 1e-10):
-            n3 = n3/vecnorm;
+            n3 = n3/vecnorm
 
         n4      = np.cross(r23,r13)
         vecnorm = np.linalg.norm(n4)

@@ -107,7 +107,7 @@ cpdef double[:, ::1] wmc_writhemap_klenin1a(double[:, ::1] pos):
     cdef double[:, ::1] WM  = np.zeros([N,N],dtype=np.double)
 #~     cdef double[:, ::1] WM1 = np.zeros([N,N],dtype=np.double)
 #~     cdef double[:, ::1] WM2 = np.zeros([N,N],dtype=np.double)
-    fac4pi = 1./(4*M_PI);
+    fac4pi = 1./(4*M_PI)
     
     """
         Calculate Gauss integral segment contributions except those involving the last segment
