@@ -1,12 +1,15 @@
 import numpy as np
+
 cimport numpy as np
+
 import cython
 
-from libc.math cimport asin, sqrt, M_PI, isnan
+from libc.math cimport M_PI, asin, isnan, sqrt
+
 ctypedef np.float32_t DTYPE_t
-from cython.view cimport array as cvarray
-from cython cimport view
 from cpython.array cimport array, clone
+from cython cimport view
+from cython.view cimport array as cvarray
 
 """
 @cython.boundscheck(False)
