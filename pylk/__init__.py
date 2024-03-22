@@ -7,3 +7,4 @@ Provides methods to calculate linking number and writhe of polymer configuration
 """
 
 from .writhemap import writhemap
+from .writhe import writhe
