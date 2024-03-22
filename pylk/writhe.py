@@ -15,11 +15,6 @@ def writhe(pos: np.ndarray, closed: bool = True, num_ext: int = 0, ext_dir: np.n
             ext_pos[num_ext-i] = ext_pos[num_ext] - i*ext_dir*disc_len
             ext_pos[-num_ext-1+i] = ext_pos[-num_ext-1] + i*ext_dir*disc_len
         pos = ext_pos
-    
-    import sys
-    print(pos)
-    sys.exit()    
-    
     wm = writhemap(pos)
     if not closed:
         wm = wm[:-1,:-1]
