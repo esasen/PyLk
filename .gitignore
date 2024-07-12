@@ -12,3 +12,6 @@ PyLk.egg-info/
 
 # ignore all .c files
 **.c
+
+# ignore test.py
+*test.py

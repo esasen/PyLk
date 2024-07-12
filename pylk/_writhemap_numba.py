@@ -1,8 +1,6 @@
 import math
-
 import numpy as np
 from numba import jit
-
 
 @jit(nopython=True, cache=True)
 def wmn_writhemap_klenin1a(pos):

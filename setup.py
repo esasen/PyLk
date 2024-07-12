@@ -19,6 +19,15 @@ ext_modules += cythonize(
         )
     ]
 )
+ext_modules += cythonize(
+    [
+        Extension(
+            "pylk.linkingnumber_cython",
+            ["pylk/linkingnumber_cython.pyx"],
+            include_dirs=[numpy.get_include()],
+        )
+    ]
+)
 
 # ~ ext_modules+=cythonize("pylk/cythonWM.pyx"),include_dirs=[numpy.get_include()]
 # ~ compile_args = ['-g', '-std=c++17', '-stdlib=libc++']
