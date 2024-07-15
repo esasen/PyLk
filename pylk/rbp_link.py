@@ -28,21 +28,23 @@ if __name__ == '__main__':
     
     import time 
     t1 = time.time()
-    num = 1
+    num = 6
     for i in range(num):
         lk = _eval_lk_python(chain1,chain2)
     t2 = time.time()
+    pydt = (t2-t1)/num
     print(f'python dt = {np.round(t2-t1,decimals=3)} ({(t2-t1)/num} s)')
-    num = 65
+    num = 100
     for i in range(num):
         lk = _eval_lk_numba(chain1,chain2)
     t3 = time.time()
-    print(f'numba dt = {np.round(t3-t2,decimals=3)} ({(t3-t2)/num} s)')
-    num = 65
+    nudt = (t3-t2)/num
+    print(f'numba dt = {np.round(t3-t2,decimals=3)} ({(t3-t2)/num} s -> {np.round(pydt/nudt,decimals=1)}x)')
+    num = 100
     for i in range(num):
         lk = _eval_lk_cython(chain1,chain2)
     t4 = time.time()
-    print(f'cython dt = {np.round(t4-t3,decimals=3)} ({(t4-t3)/num} s)')
+    cydt = (t4-t3)/num
+    print(f'cython dt = {np.round(t4-t3,decimals=3)} ({(t4-t3)/num} s -> {np.round(pydt/cydt,decimals=1)}x)')
     print(f'lk = {lk}')
-    
     

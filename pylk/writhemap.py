@@ -19,7 +19,6 @@ except ModuleNotFoundError:
 
 WM_METHODS = ["klenin1a"]
 
-
 def writhemap(config, method="klenin1a", implementation=WM_DEFAULT_METHOD):
     if method not in WM_METHODS:
         raise ValueError(f"Method '{method}' not implemented")
