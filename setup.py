@@ -5,7 +5,7 @@ import numpy
 from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 
-compile_args = ["-g", "-std=c++17", "-stdlib=libc++"]
+compile_args = ["-g", "-std=c++21", "-stdlib=libc++"]
 cmdclass = {}
 ext_modules = []
 
@@ -34,11 +34,11 @@ ext_modules += cythonize(
 
 setup(
     name="PyLk",
-    version="0.0.1",
+    version="0.1.0",
     description="A package to calculate linking properties of polymer configurations",
-    url="https://github.com/esasen/IOPolyMC",
+    url="https://github.com/eskoruppa/PyLk",
     author="Enrico Skoruppa",
-    author_email="enrico.skoruppa@gmail.com",
+    author_email="esk dot phys at gmail dot com",
     license="MIT",
     packages=["pylk"],
     install_requires=["numpy", "numba", "cython", "scipy"],
