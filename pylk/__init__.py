@@ -10,4 +10,4 @@ from .writhemap import writhemap
 from .writhe import writhe
 
 from .rbp_link import triads2chain, triads2link
-from .eval_link import eval_link
+from .eval_link import linkingnumber
