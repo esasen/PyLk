@@ -17,8 +17,7 @@ except ModuleNotFoundError:
         warnings.warn(
             "PyLK: Numba not installed. Defaulting to python implementation. Consider installing numba or compiling cython implementation."
         )
-        
-        
+         
 def eval_link(chain1: np.ndarray, chain2: np.ndarray) -> np.ndarray:
     if LK_METHOD == 1:
         print('using cython')
