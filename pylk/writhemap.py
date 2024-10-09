@@ -13,9 +13,9 @@ try:
 except ModuleNotFoundError:
     WM_CYTHON_INCLUDED = False
     WM_DEFAULT_METHOD = "numba"
-    warnings.warn(
-        "Cython version of writhemap (PyLk) not compiled. Defaulting to numba implementation. Consider compiling the cython version."
-    )
+    # warnings.warn(
+    #     "Cython version of writhemap (PyLk) not compiled. Defaulting to numba implementation. Consider compiling the cython version."
+    # )
 
 WM_METHODS = ["klenin1a"]
 
